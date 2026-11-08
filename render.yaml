@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: ondo-logistics-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: RESET_PASSWORD_SECRET
+        sync: false
+      - key: VERIFICATION_SECRET
+        sync: false
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: MAIL_USERNAME
+        sync: false
+      - key: MAIL_PASSWORD
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+      - key: MAIL_PORT
+        value: "587"
+      - key: MAIL_SERVER
+        value: smtp.gmail.com
+      - key: MAIL_STARTTLS
+        value: "true"
+      - key: MAIL_SSL_TLS
+        value: "false"
+      - key: REDIS_URL
+        sync: false
+      - key: ML_MODEL_PATH
+        value: trained_models/pricing_pipeline.joblib
+      - key: OTP_EXPIRY_SECONDS
+        value: "600"
+      - key: FRONTEND_URL
+        sync: false
